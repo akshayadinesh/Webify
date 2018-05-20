@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	</head>
+	<body>
+		<script>document.body.className += ' fade-out';</script>
+
+		<style type="text/css">
+			body {
+				font-family: 'Roboto Condensed', sans-serif;
+				font-size: 20px;
+			    opacity: 1;
+    			transition: 3s opacity;
+    			color: white;
+			}
+			body.fade-out {
+    			opacity: 0;
+    			transition: none;
+			}
+			html {
+    			background-color: #9013FE;
+			}
+
+			.button {
+				font-family: 'Roboto Condensed', sans-serif;
+			    background-color: #fff; /* White */
+			    border: none;
+			    color: #9013FE;
+			    padding: 16px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    margin: 4px 2px;
+			    -webkit-transition-duration: 0.4s; /* Safari */
+			    transition-duration: 0.4s;
+			    cursor: pointer;
+			}
+
+			.button1 {
+			    background-color: #9013FE; 
+			    color: white; 
+			    border: 2px solid white;
+			}
+
+			.button1:hover {
+			    background-color: white;
+			    color: #9013FE;
+			}
+/*
+			input[type=text], select {
+			    padding: 12px 20px;
+			    margin: 8px 0;
+			    display: inline-block;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			}
+*/
+			.center-div
+			{
+			     margin-top: 150px;
+			}
+
+		</style>
+		<center>
+			<div class="center-div">
+
+				<img src="static/logo.png">
+				<h1>Webify</h1>
+				<p>Generate beautiful websites for your nonprofit in seconds.</p>
+				<button class="button button1" onclick="popup()">Import from Twitter</button>
+
+		</div>
+		</center>
+
+		<script type="text/javascript">
+			function popup() {
+				var username = prompt("Please enter your Twitter username:", "");
+				logIn(username)
+			}
+			function logIn(username) {
+				window.location.href = "/customize/" + username
+			}
+			$(function() {
+    			$('body').removeClass('fade-out');
+			});
+		</script>
+	</body>
+</html>
